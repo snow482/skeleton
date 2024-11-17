@@ -1,0 +1,23 @@
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-evenly;
+}
+
+.registration-form__input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.registration-form__label {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-form__select {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}

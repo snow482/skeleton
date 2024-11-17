@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 600px;
+  list-style-type: none;
+}
+
+.nav__link {
+  font-size: 30px;
+}
