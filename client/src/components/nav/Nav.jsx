@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import React, { useState } from "react";
-import axiosInstance from "../../../services/axiosInstance";
+import axiosInstance from "../../services/axiosInstance";
 import  "./Nav.css";
 
 export default function Nav({ user, setUser }) {

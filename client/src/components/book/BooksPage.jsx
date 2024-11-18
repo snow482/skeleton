@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axiosInstance from "../../../services/axiosInstance";
+import axiosInstance from "../../services/axiosInstance";
 import BookItem from "./BookItem";
 import "./Book.css";
 
@@ -23,7 +23,6 @@ export default function BooksPage({ user }) {
 
   return (
     <div>
-      <h1>Hello in the bookstore.</h1>
       <h2>Books</h2>
       <div>
         <div className="books">

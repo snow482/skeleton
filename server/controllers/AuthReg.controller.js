@@ -9,7 +9,7 @@ exports.userRegistrationController = async (req, res) => {
   try {
     const { email, password } = req.body
     
-    if (email.trim() === '' || password.trim() === '') {
+    if (email && password && email.trim() === '' || password.trim() === '') {
       console.log('Please, fill the fields');
       return res.status(400).json({ message: 'Please, fill the fields' })
     }
@@ -42,7 +42,7 @@ exports.userRegistrationController = async (req, res) => {
 exports.userAuthorizationController = async (req, res) => {
   try {
     const { email, password } = req.body
-    if (email.trim() === '' || password.trim() === '') {
+    if (email && password && email.trim() === '' || password.trim() === '') {
       console.log('Please, fill the fields');
       return
     }

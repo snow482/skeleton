@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import axiosInstance from "../../../services/axiosInstance";
+import axiosInstance from "../../services/axiosInstance";
 import BookItem from "./BookItem";
 
 export default function MyBooks({user, books, setBooks}) {

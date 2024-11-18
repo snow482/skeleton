@@ -15,9 +15,9 @@ export function setAccessToken(token) {
 axiosInstance.interceptors.request.use((config) => {
   if (!config.headers.Authorization) {
     // есть ли заголовок с названием Authorization
+    console.log(accessToken);
+    
     config.headers.Authorization = `Bearer ${accessToken}`; 
-    //console.log(2222,config.headers.Authorization);
-
     // создаем заголовок 
     // "Bearer fsdjknfjksdanfjdsnfkjdsfj"
   }
@@ -31,11 +31,13 @@ axiosInstance.interceptors.response.use(
     const prevRequest = error.config;
     //  проверяем статус и проверка на первичность запроса
     if (error.response.status === 403 && !prevRequest.sent) {
+      
       // делаем запрос на пару токенов
-      const response = await axios.get("/api/auth/refresh");
+      // const response = await axios.get("http://localhost:3000/api/auth/refresh", {  withCredentials: true});
+      const response = await axiosInstance.get('/auth/refresh')
+
       // достаем токен из ответа
       accessToken = response.data.accessToken;
-      //console.log(333,accessToken);
       // и создаем новый ключ и sent для проверки первичности
       prevRequest.sent = true;
       // устанавливаем заголовки

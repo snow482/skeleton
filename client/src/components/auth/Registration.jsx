@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axiosInstance, { setAccessToken } from "../../../services/axiosInstance";
+import axiosInstance, { setAccessToken } from "../../services/axiosInstance";
 import "./Auth.css";
 
 export default function Registration({ setUser }) {
@@ -13,7 +13,7 @@ export default function Registration({ setUser }) {
   const regSubmitHandle = async (event) => {
     event.preventDefault()
     try {
-      if (email.trim() === '' || password.trim() === ''|| check.trim() === '') {
+      if (email && password && check && email.trim() === '' || password.trim() === ''|| check.trim() === '') {
         setError('Please, fill the fields')
         return
       }

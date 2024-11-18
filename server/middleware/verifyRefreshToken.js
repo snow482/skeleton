@@ -15,6 +15,5 @@ function verifyRefreshToken(req, res, next) {
       res.clearCookie('refreshToken').sendStatus(401);
     }
   }
-  
 
 module.exports = verifyRefreshToken

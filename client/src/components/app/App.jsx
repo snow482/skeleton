@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axiosInstance, { setAccessToken } from "../../../services/axiosInstance";
+import axiosInstance, { setAccessToken } from "../../services/axiosInstance";
 import Layout from "../Layout";
 import Registration from '../auth/Registration'
 import Authorization from '../auth/Authorization'
@@ -9,10 +9,9 @@ import BooksPage from '../book/BooksPage'
 import MyBooks from '../book/MyBooks'
 import "./App.css";
 
-export default function App() {
+export function App() {
   const [user, setUser] = useState(null);
   const [books, setBooks] = useState([]);
-
 
   const checkUserStatus = async () => {
     try {

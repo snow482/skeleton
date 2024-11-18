@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axiosInstance, { setAccessToken } from "../../../services/axiosInstance";
+import axiosInstance, { setAccessToken } from "../../services/axiosInstance";
 import "./Auth.css";
 
 export default function Authorization({ setUser }) {
@@ -12,7 +12,7 @@ export default function Authorization({ setUser }) {
   const authSubmitHandle = async (event) => {
     event.preventDefault();
     try {
-      if (email.trim() === '' || password.trim() === '') {
+      if (email && password && email.trim() === '' || password.trim() === '') {
         setError('Please, fill the fields')
         return
       }

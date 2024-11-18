@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../../../services/axiosInstance";
+import axiosInstance from "../../services/axiosInstance";
 
 export default function BookFormAdd({ setBooks }) {
   const [title, setTitle] = useState("");
@@ -12,11 +12,7 @@ export default function BookFormAdd({ setBooks }) {
   const onHandleSubmit = async (event) => {
     try {
       event.preventDefault();
-      if (
-        title.trim() === "" ||
-        description.trim() === "" ||
-        cover.trim() === ""
-      ) {
+      if (title.trim() === "" || description.trim() === "" || cover.trim() === "") {
         setError("Fill in all the blanks!");
         return;
       }
@@ -30,12 +26,12 @@ export default function BookFormAdd({ setBooks }) {
         setTitle("");
         setDescription("");
         setCover("");
-        navigate('/My-books')
+        navigate('/my-books')
         return;
       }
     } catch (error) {
       console.log(error);
-      setError("Authorize, then add it!");
+      setError("Authoriztand add it!");
     }
   };
 
